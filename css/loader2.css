@@ -1,0 +1,25 @@
+.loader {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 40px;
+    color: palevioletred;
+}
+
+/* insert 3 dots via css */
+.loader::after {
+    /* \2026 == ascii code */
+    content: '\2026';
+    display: inline-block;
+    overflow: hidden;
+    /* centers elipses */
+    vertical-align: bottom;
+    animation: dots steps(4, end) 2s infinite;
+    width: 0px;
+}
+
+/* every 2 seconds expand width */
+/* 4th step resets */
+@keyframes dots {
+    to {
+        width: 1.25em;
+    }
+}

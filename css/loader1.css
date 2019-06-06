@@ -1,0 +1,41 @@
+.loader {
+    height: 50px;
+    transform-origin: bottom center;
+    animation: rotate 3s linear infinite;
+}
+
+/* property of both circles */
+.circle {
+    /* spins circles in a circle */
+    display: inline-block;
+    background-color: purple;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* default scale === 1 */
+    transform: scale(0);
+    animation: grow 1.5s linear infinite;
+    margin: -10px;
+}
+
+/* property of 2nd circle */
+.circle:nth-child(2) {
+    background-color: palevioletred;
+    animation-delay: 0.7s;
+}
+
+/* keyframe for loader animation */
+/* make 1 rotation every 3 seconds */
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* keyframe for cicle animation */
+/* every 1.5 seconds, grow to scale */
+@keyframes grow {
+    50% {
+        transform: scale(1);
+    }
+}
